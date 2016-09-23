@@ -2,6 +2,8 @@
 #include <string>
 #include "Repartidor.h"
 #include "Jugador.h"
+#include "Persona.h"
+
 
 using namespace std;
 
@@ -10,12 +12,12 @@ class Mesa: public Repartidor,public Jugador
 	private:
 		int Numero;
 		string Tipo;
-		Repartidor Dealer;
-		Jugador Player;
+		Persona* Dealer;
+		Persona* Player;
 
 	public:
 		Mesa();
-		Mesa(int, string, Repartidor, Jugador);
+		Mesa(int, string, Persona*, Persona*);
 		virtual ~Mesa();
 		virtual string toString()const;
 };

@@ -14,6 +14,7 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
 	vector<Persona*> Personas;
+	vector<Mesa*> Mesas;
 
 	Personas.push_back(new Administrador("Admin", 0, 1234, 0, "Gerente Tiempo Completo", 99999999));
 
@@ -278,6 +279,28 @@ int main(int argc, char const *argv[])
 
 						cin>> getJug;
 
+						Mesas.push_back(new Mesa(NumMesa, typeMesa, Personas[getRep], Personas[getJug]));
+						cout<< "Se a creado sucesivamente una mesa!"<< endl;
+					}
+
+					if (opcAdminMesa == 2)
+					{
+						
+					}
+
+					if (opcAdminMesa == 3)
+					{
+						for (int i = 0; i < Mesas.size(); ++i)
+						{
+							cout<< Mesas[i];
+						}
+
+						cout<< "Ingrese posicion a borrar!" << endl;
+						int getPos = 0;
+
+						cin>> getPos;
+
+						cout<< "Mesa Borrada!"<< endl;
 					}
 				}
 				else

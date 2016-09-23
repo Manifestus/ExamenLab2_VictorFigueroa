@@ -22,5 +22,5 @@ Baraja.o:	Baraja.cpp Carta.h Baraja.h
 Carta.o:	Carta.cpp Carta.h
 	g++ -c Carta.cpp
 
-Mesa.o:	Mesa.cpp Repartidor.h Jugador.h Mesa.h
+Mesa.o:	Mesa.cpp Persona.h Repartidor.h Jugador.h Mesa.h
 	g++ -c Mesa.cpp
