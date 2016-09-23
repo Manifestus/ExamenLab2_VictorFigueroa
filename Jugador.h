@@ -15,6 +15,7 @@ class Jugador: public Persona
 		Jugador();
 		Jugador(string, int, int, string, string, int);
 		string getNombre();
+		int getID();
 		virtual ~Jugador();
 		virtual string toString()const;
 };

@@ -14,6 +14,8 @@ class Administrador: public Persona
 	public:
 		Administrador();
 		Administrador(string, int, int, int, string, int);
+		string getNombre();
+		int getID();
 		virtual ~Administrador();
 		virtual string toString()const;
 };

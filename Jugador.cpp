@@ -23,6 +23,11 @@ string Jugador::getNombre()
 	return Nombre;
 }
 
+int Jugador::getID()
+{
+	return Identidad;
+}
+
 string Jugador::toString()const
 {
 	stringstream ss;

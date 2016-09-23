@@ -17,6 +17,16 @@ Administrador::~Administrador()
 {
 }
 
+string Administrador::getNombre()
+{
+	return Nombre;
+}
+
+int Administrador::getID()
+{
+	return Identidad;
+}
+
 string Administrador::toString()const
 {
 	stringstream ss;

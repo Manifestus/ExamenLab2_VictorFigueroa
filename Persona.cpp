@@ -19,6 +19,17 @@ string Persona::toString()const
 	return ss.str();
 }
 
+string Persona::getNombre()
+{
+	return Nombre;
+}
+
+int Persona::getID()
+{
+	return Identidad;
+}
+
+
 Persona::~Persona()
 {
 }
