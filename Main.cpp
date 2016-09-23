@@ -285,7 +285,61 @@ int main(int argc, char const *argv[])
 
 					if (opcAdminMesa == 2)
 					{
-						
+						string typeMesa;
+					cout<< "Ingrese opcion!" << endl << "1. Agregar mesa!" << endl << "2. Modificar mesa!" << endl<< "3. Eliminar mesa!" << endl;
+					int opcAdminMesa = 1;
+
+					cin>> opcAdminMesa;	
+
+					if (opcAdminMesa == 1)
+					{
+						cout<< "Ingrese el numero de la mesa!" << endl;
+						int NumMesa = 0;
+						cin>> NumMesa;
+
+						cout<< "Ingrese opcion!"<< endl << "1. VIP" << endl << "2. Clasica" << endl << "3. Viajero" << endl;
+						int opcMesaType = 1;
+
+						if (opcMesaType == 1)
+						{
+							typeMesa = "VIP";
+						}
+						if (opcMesaType == 2)
+						{
+							typeMesa = "Clasica";
+						}
+						if (opcMesaType == 3)
+						{
+							typeMesa = "Viajero";
+						}
+
+						for (int i = 0; i < Personas.size(); ++i)
+						{
+							Persona* temp = (Personas[i]);
+							if (dynamic_cast<Repartidor*>(Personas[i])!=NULL)
+							{
+								cout<< "Repartidor opcion #"<< i << endl;
+							}
+
+							if (dynamic_cast<Jugador*>(Personas[i])!=NULL)
+							{
+								cout<< "Jugador opcion #"<< i << endl;
+							}
+						}
+
+						cout<< "Ingrese la posicion del Repartidor!"<< endl;
+						int getRep = 0 ;
+
+						cin>> getRep;
+
+						cout<< "Ingrese la posicion del Jugador!"<< endl;
+						int getJug = 0 ;
+
+						cin>> getJug;
+
+						Mesas.push_back(new Mesa(NumMesa, typeMesa, Personas[getRep], Personas[getJug]));
+						cout<< "Se a Modificado sucesivamente una mesa!"<< endl;
+					}
 					}
 
 					if (opcAdminMesa == 3)
