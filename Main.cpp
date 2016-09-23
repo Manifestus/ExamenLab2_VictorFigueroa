@@ -205,21 +205,48 @@ int main(int argc, char const *argv[])
 
 			if (opcAdminMain == 2)
 			{
-				cout<< "Ingrese opcion!" << endl << "1. Agregar mesa!" << endl << "2. Modificar mesa!" << endl<< "3. Eliminar mesa!" << endl;
-				int opcAdminMesa = 1;
 
-				cin>> opcAdminMesa;
+				int contR = 0;
+				int contJ = 0;
 
-				if (opcAdminMesa == 1)
+				for (int i = 0; i < Personas.size(); i++)
 				{
-					
+					Persona* temp = (Personas[i]);
+					if (dynamic_cast<Repartidor*>(Personas[i])!=NULL)
+					{
+						contR++;
+					}
+
+					if (dynamic_cast<Jugador*>(Personas[i])!=NULL)
+					{
+						contJ++;
+					}
+				
+				}
+
+				if (contR > 0 && contJ > 0)
+				{
+					cout<< "Ingrese opcion!" << endl << "1. Agregar mesa!" << endl << "2. Modificar mesa!" << endl<< "3. Eliminar mesa!" << endl;
+					int opcAdminMesa = 1;
+
+					cin>> opcAdminMesa;	
+
+					if (opcAdminMesa == 1)
+					{
+						cout<< "Ingrese el numero de la mesa!" << endl;
+						int NumMesa = 0;
+						cin>> NumMesa;
+					}
+				}
+				else
+				{
+					cout<< "No hay suficientes Repartidores o Jugadores!"<< endl;
 				}
 			}
-		}
 
 		cout<< "Desea continuar!? 0/1"<< endl;
 		cin>> resp;
+		}
 	}
-
 	return 0;
 }
