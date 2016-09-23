@@ -103,7 +103,7 @@ int main(int argc, char const *argv[])
 				while(respPersonas == 0)
 				{
 					cout<< "Ingrese tipo!" << endl << "1. Administrador" << endl<< "2. Repartidor" << endl << "3. Jugador";
-					int opcAdminPersona = 0;
+					int opcAdminPersona = 1;
 
 					cin>> opcAdminPersona;
 
@@ -116,20 +116,104 @@ int main(int argc, char const *argv[])
 					cout<< "Ingrese ID!";
 					cin>> identidad;
 
+					string gerencia;
+					string dificultad;
+					string tipo;
+
 					if (opcAdminPersona == 1)
 					{
-						cout<< "Ingrese la experiencia laboral!" < endl;
+						cout<< "Ingrese la experiencia laboral!" << endl;
 						int exp;
 						cin>> exp;
 
+						cout<< "Ingrese opcion!" << endl << "1. Gerente de Medio Tiempo"<< endl<< "2. Gerente de Medio Tiempo" << endl << "3. Gerente General" << endl;
+						int opcGerencia = 1;
+						cin>> opcGerencia;
+
+						if (opcGerencia == 1)
+						{
+							gerencia = "Gerente de Tiempo Completo";
+						}
+						if (opcGerencia == 2)
+						{
+							gerencia = "Gerente de Medio Tiempo";
+						}
+						if (opcGerencia == 3)
+						{
+							gerencia = "Gerente General";
+						}
+
+						cout<< "Ingrese sueldo a pagar mensual!"<< endl;
+						int sueldo = 0;
+						cin>> sueldo;
+
+						tipo = "Administrador";
+
+						Personas.push_back(new Administrador(nombre, edad, identidad, exp, gerencia, sueldo));
+						cout<< "Se a creado un " << tipo << "sucesivamente!" << endl; 
+					}
+
+					if (opcAdminPersona == 2)
+					{
 						cout<< "Ingrese opcion!" << endl << "1. Dificil"<< endl<< "2. Intermedio" << endl << "3. Facil" << endl;
+						int opcDificultad = 1;
+						cin>> opcDificultad;
+
+						if (opcDificultad == 1)
+						{
+							dificultad = "Dificil";
+						}
+						if (opcDificultad == 2)
+						{
+							dificultad = "Intermedio";
+						}
+						if (opcDificultad == 3)
+						{
+							dificultad = "Facil";
+						}
+
+						cout<< "Ingrese la cantidad de dinero a defender!"<< endl;
+						int Dinero = 0;
+						cin>> Dinero;
+
+						tipo = "Repartidor";
+						Personas.push_back(new Repartidor(nombre, edad, identidad, dificultad, Dinero, Baraja()));
+						cout<< "Se a creado un " << tipo << "sucesivamente!" << endl; 
+					}
+
+					if (opcAdminPersona == 3)
+					{
+						cout<< "Ingrese lugar de procedencia!" << endl;
+						string Lugar;
+
+						cout<< "Ingrese el apodo del jugador!" << endl;
+						string Apodo;
+
+						cout<< "Ingrese Monto de dinero depositado!"<< endl;
+						int Dineros;
+
+						tipo = "Jugador";
+
+						Personas.push_back(new Jugador(nombre, edad, identidad, Lugar, Apodo, Dineros));
+						cout<< "Se a creado un " << tipo << "sucesivamente!" << endl; 
 					}
 
 					cout<< "Desea continuar creando personas!? 0/1"<< endl;
 					cin>> respPersonas;
 				}
-				
-				
+			}
+
+			if (opcAdminMain == 2)
+			{
+				cout<< "Ingrese opcion!" << endl << "1. Agregar mesa!" << endl << "2. Modificar mesa!" << endl<< "3. Eliminar mesa!" << endl;
+				int opcAdminMesa = 1;
+
+				cin>> opcAdminMesa;
+
+				if (opcAdminMesa == 1)
+				{
+					
+				}
 			}
 		}
 
