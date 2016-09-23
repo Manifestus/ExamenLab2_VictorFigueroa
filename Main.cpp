@@ -300,6 +300,8 @@ int main(int argc, char const *argv[])
 
 						cin>> getPos;
 
+						Mesas.erase(Mesas.begin() + getPos);
+
 						cout<< "Mesa Borrada!"<< endl;
 					}
 				}
